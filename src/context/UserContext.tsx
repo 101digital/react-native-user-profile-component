@@ -16,11 +16,13 @@ interface UserDetails {
 interface UserContextType {
   userDetails: UserDetails | null;
   fetchUserDetails: () => Promise<boolean>;
+  updateUserProfile: (userId: string, body: any) => Promise<UserDetails>;
 }
 
 // Create the user context
 const UserContext = createContext<UserContextType | undefined>(undefined);
-const memberShipService = MemberShipService.instance()
+const memberShipService = MemberShipService.instance();
+
 export const UserProvider: React.FC = ({ children }) => {
   const { user } = useAuth();
   const [userDetails, setUserDetails] = useState<UserDetails | null>(null);
@@ -40,8 +42,19 @@ export const UserProvider: React.FC = ({ children }) => {
     }
   };
 
+  const updateUserProfile = async (userId: string, body: any) => {
+    try {
+      const updatedUserDetails = await memberShipService.updateProfile(userId, body);
+      setUserDetails(updatedUserDetails);
+      return updatedUserDetails;
+    } catch (error) {
+      console.error('Error updating user profile:', error);
+      throw error;
+    }
+  };
+
   return (
-    <UserContext.Provider value={{ userDetails, fetchUserDetails }}>
+    <UserContext.Provider value={{ userDetails, fetchUserDetails, updateUserProfile }}>
       {children}
     </UserContext.Provider>
   );
