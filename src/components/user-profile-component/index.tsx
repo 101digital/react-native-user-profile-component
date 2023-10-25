@@ -72,6 +72,7 @@ const UserProfileComponent = ({ fields }) => {
                     <Text style={styles.fieldLabel}>{fields[fieldName].label}:</Text>
                     {fields[fieldName].type === 'textField' && (
                       <TextInput
+                        testID={fields[fieldName].testID}
                         style={[
                           styles.input,
                           values[fieldName] !== initialValues[fieldName] ? styles.errorInput : null,
@@ -84,10 +85,10 @@ const UserProfileComponent = ({ fields }) => {
                       />
                     )}
                     {fields[fieldName].type === 'labelField' && (
-                      <Text style={[styles.label]}>{values[fieldName]}</Text>
+                      <Text testID={fields[fieldName].testID} style={[styles.label]}>{values[fieldName]}</Text>
                     )}
                     {fields[fieldName].type === 'datePicker' && (
-                      <View>
+                      <View testID={fields[fieldName].testID}>
                         <Text style={[styles.label]}>{values[fieldName]}</Text>
                         <Button title="Change Date" onPress={() => openDatePicker(fieldName)} />
                       </View>
