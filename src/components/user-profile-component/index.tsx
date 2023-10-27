@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useUser } from 'react-native-user-profile-component';
 import { ThemeContext } from 'react-native-theme-component';
 import { TextInput } from 'react-native-paper';
-import { EditIcon, SelectorIcon, TickIcon } from '@/assets/icon';
+import { EditIcon, SelectorIcon, TickIcon } from '../../assets/icon';
 import useMergeStyles from './styles';
 import Modal from 'react-native-modal';
 import { getEnterpriseData } from '@/utils/screen-utils';
