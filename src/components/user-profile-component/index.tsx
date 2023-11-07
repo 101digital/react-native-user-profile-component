@@ -222,7 +222,6 @@ const UserProfileComponent = ({ fields }) => {
               {Object.keys(formatedFields).map((fieldName) => {
                 return (
                   <View
-                    testID={`container-user-info${fieldName}`}
                     style={styles.userInfo}
                     key={fieldName}
                   >
@@ -238,7 +237,7 @@ const UserProfileComponent = ({ fields }) => {
                           ]}
                         >
                           <TextInput
-                            testID={`textinput-user-info${fieldName}`}
+                            testID={`${fields[fieldName]?.type}${fieldName}`}
                             style={[
                               styles.input,
                               values[fieldName] !== initialValues[fieldName]
@@ -279,8 +278,8 @@ const UserProfileComponent = ({ fields }) => {
                           ]}
                         >
                           <TextInput
-                            testID={`textinput-user-info${fieldName}`}
-                            style={[
+                              testID={`${fields[fieldName]?.type}${fieldName}`}
+                              style={[
                               styles.input,
                               values[fieldName] !== initialValues[fieldName]
                                 ? styles.errorInput
@@ -322,7 +321,7 @@ const UserProfileComponent = ({ fields }) => {
 
                     {formatedFields[fieldName].type === 'labelField' && (
                       <>
-                        <Text testID={`text-user-info${fieldName}`} style={styles.fieldLabel}>
+                        <Text testID={`${fields[fieldName]?.type}${fieldName}`} style={styles.fieldLabel}>
                           {formatedFields[fieldName].label}:
                         </Text>
                         <Text style={styles.label}>{values[fieldName]}</Text>
@@ -330,7 +329,7 @@ const UserProfileComponent = ({ fields }) => {
                     )}
                     {formatedFields[fieldName].type === 'datePicker' && (
                       <View>
-                        <Text testID={`text-user-info${fieldName}`} style={styles.fieldLabel}>
+                        <Text testID={`${fields[fieldName]?.type}${fieldName}`} style={styles.fieldLabel}>
                           {formatedFields[fieldName].label}:
                         </Text>
                         <Text style={styles.label}>{values[fieldName]}</Text>
