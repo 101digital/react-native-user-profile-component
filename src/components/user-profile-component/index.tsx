@@ -237,7 +237,7 @@ const UserProfileComponent = ({ fields }) => {
                           ]}
                         >
                           <TextInput
-                            testID={`${fields[fieldName]?.type}${fieldName}`}
+                            testID={`${fields[fieldName].type}-${fieldName}`}
                             style={[
                               styles.input,
                               values[fieldName] !== initialValues[fieldName]
@@ -278,7 +278,7 @@ const UserProfileComponent = ({ fields }) => {
                           ]}
                         >
                           <TextInput
-                              testID={`${fields[fieldName]?.type}${fieldName}`}
+                              testID={`${fields[fieldName].type}-${fieldName}`}
                               style={[
                               styles.input,
                               values[fieldName] !== initialValues[fieldName]
@@ -321,7 +321,7 @@ const UserProfileComponent = ({ fields }) => {
 
                     {formatedFields[fieldName].type === 'labelField' && (
                       <>
-                        <Text testID={`${fields[fieldName]?.type}${fieldName}`} style={styles.fieldLabel}>
+                        <Text testID={`${fields[fieldName].type}-${fieldName}`} style={styles.fieldLabel}>
                           {formatedFields[fieldName].label}:
                         </Text>
                         <Text style={styles.label}>{values[fieldName]}</Text>
@@ -329,7 +329,7 @@ const UserProfileComponent = ({ fields }) => {
                     )}
                     {formatedFields[fieldName].type === 'datePicker' && (
                       <View>
-                        <Text testID={`${fields[fieldName]?.type}${fieldName}`} style={styles.fieldLabel}>
+                        <Text testID={`${fields[fieldName].type}-${fieldName}`} style={styles.fieldLabel}>
                           {formatedFields[fieldName].label}:
                         </Text>
                         <Text style={styles.label}>{values[fieldName]}</Text>
