@@ -226,7 +226,7 @@ const UserProfileComponent = ({ fields }) => {
                     key={fieldName}
                   >
                     {formatedFields[fieldName].type === 'subtitle' && (
-                      <Text style={styles.subtitle}>{formatedFields[fieldName].label}</Text>
+                      <Text testID={`${fields[fieldName].type}-${fieldName}`} style={styles.subtitle}>{formatedFields[fieldName].label}</Text>
                     )}
                     {formatedFields[fieldName].type === 'textField' && (
                       <View style={styles.inputWrapper}>
