@@ -92,3 +92,5 @@ The component supports the following fields:
 2. **Import:**
    ```javascript
    import UserProfile from './path/to/UserProfile';
+
+   <UserProfile componentName="Profile" enableTranslation={true} />
