@@ -1,6 +1,6 @@
-# react-native-user-profile-component
+# user-profile-component
 
-**react-native-user-profile-component** is a reusable component for get user details that can be used across all the apps developed by 101 Digital.
+**user-profile-component** is a reusable component for get user details that can be used across all the apps developed by 101 Digital.
 
 ## Features
 
@@ -16,7 +16,7 @@ yarn add https://github.com/101digital/react-native-user-profile-component.git#1
 
 Make sure you have permission to access this repository
 
-Because **react-native-user-profile-component** depends on some libraries, so make sure you installed all dependencies into your project.
+Because **user-profile-component** depends on some libraries, so make sure you installed all dependencies into your project.
 
 - [react-native-theme-component](https://github.com/101digital/react-native-theme-component.git)
 - [react-native-app-auth](https://github.com/FormidableLabs/react-native-app-auth).
