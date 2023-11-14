@@ -53,35 +53,45 @@ The React Native User Profile Component is a dynamic form generator designed for
 
 The component supports the following fields:
 
-| Field Name            | Type          | Description                                       |
-|-----------------------|---------------|---------------------------------------------------|
-| userId                | string        | Unique identifier for the user.                    |
-| userName              | string        | User's username or email.                         |
-| firstName             | string        | User's first name.                                |
-| lastName              | string        | User's last name.                                 |
-| nickName              | string        | User's nickname.                                  |
-| email                 | string        | User's email address.                             |
-| mobileNumber          | string        | User's mobile number.                             |
-| isUSCitizen           | boolean       | Indicates if the user is a US citizen.            |
-| status                | string        | User's status (e.g., Prospect).                   |
-| lastLoginAt           | string        | Timestamp of the last login.                      |
-| contacts              | array         | Array of user contacts.                           |
-| addresses             | array         | Array of user addresses.                          |
-| listCustomFields      | array         | Custom fields with ids, keys, and values.         |
-| employmentDetails     | array         | Array of employment details including company name, type, and occupation. |
-| taxDetails            | array         | Array of user tax details.                        |
-| memberships           | array         | User's memberships with organization details.    |
-| kycDetails            | object        | KYC details including an array of documents.     |
-| apps                  | array         | Array of user apps with names and onboarding dates. |
-| listRoles             | array         | List of user roles.                              |
-| creditDetails         | array         | Array of credit details including credit type, card and loan counts, and annual income. |
-| createdAt             | string        | Timestamp of user creation.                      |
-| passwordExpired      | boolean       | Indicates if the user's password has expired.    |
-| updatedAt             | string        | Timestamp of the last update.                    |
-| religion              | string        | User's religion.                                 |
-| cif                   | string        | User's CIF (Customer Information File) number.   |
-| devices               | array         | Array of user devices.                           |
-| userPreference        | object        | User's preferences including language code.     |
+| Field Name            | Type          | Description                                       | Supported Fields                   |
+|-----------------------|---------------|---------------------------------------------------|-------------------------------------|
+| userId                | string        | Unique identifier for the user.                    | LabelField                          |
+| userName              | string        | User's username or email.                         | LabelField                          |
+| firstName             | string        | User's first name.                                | InputField, LabelField              |
+| lastName              | string        | User's last name.                                 | InputField, LabelField              |
+| nickName              | string        | User's nickname.                                  | InputField, LabelField              |
+| email                 | string        | User's email address.                             | InputField, LabelField              |
+| mobileNumber          | string        | User's mobile number.                             | InputField, LabelField              |
+| isUSCitizen           | boolean       | Indicates if the user is a US citizen.            | LabelField, SelectField or RadioField|
+| status                | string        | User's status (e.g., Prospect).                   | InputField, LabelField              |
+| lastLoginAt           | string        | Timestamp of the last login.                      | LabelField                          |
+| contacts              | array         | Array of user contacts.                           | SelectField, InputField, LabelField  |
+| addresses             | array         | Array of user addresses.                          | SelectField, InputField, LabelField  |
+| listCustomFields      | array         | Custom fields with ids, keys, and values.         | SelectField, InputField, LabelField  |
+| employmentDetails     | array         | Array of employment details including company name, type, and occupation. | SelectField, InputField, LabelField  |
+| taxDetails            | array         | Array of user tax details.                        | SelectField, InputField, LabelField  |
+| memberships           | array         | User's memberships with organization details.    | SelectField, InputField, LabelField  |
+| kycDetails            | object        | KYC details including an array of documents.     | LabelField, SelectField, InputField  |
+| apps                  | array         | Array of user apps with names and onboarding dates. | SelectField, InputField, LabelField |
+| listRoles             | array         | List of user roles.                              | SelectField, InputField, LabelField  |
+| creditDetails         | array         | Array of credit details including credit type, card and loan counts, and annual income. | SelectField, InputField, LabelField |
+| createdAt             | string        | Timestamp of user creation.                      | LabelField                          |
+| passwordExpired      | boolean       | Indicates if the user's password has expired.    | LabelField, SelectField or RadioField|
+| updatedAt             | string        | Timestamp of the last update.                    | LabelField                          |
+| religion              | string        | User's religion.                                 | InputField, LabelField              |
+| cif                   | string        | User's CIF (Customer Information File) number.   | LabelField                          |
+| devices               | array         | Array of user devices.                           | SelectField, InputField, LabelField  |
+| userPreference        | object        | User's preferences including language code.     | LabelField, SelectField, InputField  |
+
+## Usage
+
+1. **Installation:**
+   - Ensure that React, React Native, and other dependencies are installed.
+   - Copy the `UserProfile` component into your project.
+
+2. **Import:**
+   ```javascript
+   import UserProfile from './path/to/UserProfile';
 
 ## Usage
 
